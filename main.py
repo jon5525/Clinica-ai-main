@@ -50,3 +50,25 @@ def generate_quiz(topic: str = Query(..., description="Medical topic for MCQs"))
         return {"topic": topic, "quiz": quiz}
     except Exception as e:
         return {"error": str(e)}
+        from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+@app.route("/")
+def home():
+    return "Clinica AI API is running"
+
+@app.route("/ask")
+def ask():
+    query = request.args.get("query")
+    if not query:
+        return jsonify({"error": "No query provided"}), 400
+    
+    # Temporary test answer for now
+    answer = f'You asked: "{query}". Clinica AI says: This is a test answer! 🩺'
+    return jsonify({"answer": answer})
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)

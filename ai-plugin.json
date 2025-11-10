@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Clinica AI",
+  "name_for_model": "clinica_ai",
+  "description_for_human": "Learn medicine interactively — explain topics, generate quizzes, and simulate clinical cases.",
+  "description_for_model": "Plugin for medical students to study interactively using Clinica AI's endpoints.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://YOUR-RENDER-URL/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://your-website.com/logo.png",
+  "contact_email": "youremail@example.com",
+  "legal_info_url": "https://your-website.com/legal"
+}

@@ -1,0 +1,54 @@
+openapi: 3.0.1
+info:
+  title: Clinica AI
+  description: API for medical learning and quiz generation
+  version: "1.0.0"
+servers:
+  - url: https://YOUR-RENDER-URL
+paths:
+  /explain:
+    get:
+      summary: Explain a medical topic
+      operationId: explainTopic
+      parameters:
+        - name: topic
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The medical topic to explain
+      responses:
+        '200':
+          description: A structured explanation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  topic:
+                    type: string
+                  explanation:
+                    type: string
+  /quiz:
+    get:
+      summary: Generate MCQs on a topic
+      operationId: generateQuiz
+      parameters:
+        - name: topic
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Medical topic for quiz
+      responses:
+        '200':
+          description: Quiz with questions and answers
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  topic:
+                    type: string
+                  quiz:
+                    type: string

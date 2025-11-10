@@ -9,7 +9,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://YOUR-RENDER-URL/openapi.yaml",
+    "url": "https://clinica-ai.onrender.com/",
     "is_user_authenticated": false
   },
   "logo_url": "https://your-website.com/logo.png",
